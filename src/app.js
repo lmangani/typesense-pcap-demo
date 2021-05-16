@@ -66,8 +66,6 @@ search.addWidgets([
   instantsearch.widgets.hits({
     container: '#hits',
     transformItems(items) {
-      //return items.map(item => ({ ...item, ts: parseInt(item.timestamp) }))
-      //return items.map(item => ({ ...item, ts: parseInt(item.timestamp), payload: JSON.stringify(item.layers) }))
       return items.map(item => ({ ...item, ts: new Date(parseInt(item.timestamp)).toUTCString(), expand: new JSONFormatter(item.layers).render().outerHTML }))
     }
   }),
