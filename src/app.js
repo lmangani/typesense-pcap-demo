@@ -1,7 +1,8 @@
 /* global instantsearch */
-
 import TypesenseInstantSearchAdapter from 'typesense-instantsearch-adapter';
 import JSONFormatter from 'json-formatter-js'
+
+require('dotenv').config()
 
 const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
   server: {
@@ -14,11 +15,7 @@ const typesenseInstantsearchAdapter = new TypesenseInstantSearchAdapter({
       },
     ],
   },
-  // The following parameters are directly passed to Typesense's search API endpoint.
-  //  So you can pass any parameters supported by the search endpoint below.
-  //  queryBy is required.
-  //  filterBy is managed and overridden by InstantSearch.js. To set it, you want to use one of the filter widgets like refinementList or use the `configure` widget.
-  additionalSearchParameters: {
+ additionalSearchParameters: {
     queryBy: 'protocol,source,destination',
   },
 });
