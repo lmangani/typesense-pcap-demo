@@ -2,7 +2,7 @@
 
 # typesense-pcap-demo
 
-Typesense + Tshark PCAP = Magic!
+[Typesense](https://typesense.org/) + Tshark PCAP = Magic!
 
 ## Requirements
 - nodejs 12.x+
